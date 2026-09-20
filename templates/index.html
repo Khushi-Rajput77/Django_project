@@ -632,11 +632,10 @@
     halfTop    = trackTop.scrollWidth    / 2;
     halfBottom = trackBottom.scrollWidth / 2;
 
-    if (offsetTop >=  halfTop)  offsetTop -= halfTop;
-    if (offsetTop <= -halfTop)  offsetTop += halfTop;
-
-    if (offsetBottom >=  halfBottom) offsetBottom -= halfBottom;
-    if (offsetBottom <= -halfBottom) offsetBottom += halfBottom;
+    if (offsetTop > halfTop) offsetTop -= halfTop;
+    if (offsetTop < -halfTop) offsetTop += halfTop;
+    if (offsetBottom > halfBottom) offsetBottom -= halfBottom;
+    if (offsetBottom < -halfBottom) offsetBottom += halfBottom;
 
     trackTop.style.transform    = 'translateX(' + offsetTop    + 'px)';
     trackBottom.style.transform = 'translateX(' + offsetBottom + 'px)';
